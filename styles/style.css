@@ -1,0 +1,14 @@
+body {
+  background-color: #000;
+  height: 90vh;
+}
+
+#image {
+  margin: auto;
+  height: 100%;
+  margin: 2%;
+  background-image: url("../images/cgabeach00.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
