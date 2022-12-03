@@ -14,20 +14,24 @@ body {
   height: 90vh;
 }
 
+@media (hover: hover) {
+  a:hover {
+    color: #5ff;
+  }
+}
+
 a {
   text-decoration: none;
   color: #eee;
 }
 
-a:hover {
-  color: #5ff;
-}
-
 .text {
   font-family: "cga";
   font-size: 1.1em;
+  line-height: 1.2;
   margin: auto;
-  max-width: 628px;
+  max-width: 582px;
+  padding: 0 15px 0 10px;
 }
 
 .container {
@@ -41,8 +45,8 @@ a:hover {
 .image {
   display: block;
   height: auto;
-  margin: 0 auto 10px auto;
-  max-height: 700px;
+  margin: 0 auto 20px auto;
+  max-height: 650px;
   max-width: 100%;
 }
 
