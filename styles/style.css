@@ -1,14 +1,42 @@
+/* Font by VileR: https://int10h.org/oldschool-pc-fonts/ */
+@font-face {
+  font-family: "cga";
+  src: url("../fonts/Web437_IBM_CGA.woff");
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #000;
+  background-color: #999;
+  color: #eee;
   height: 90vh;
 }
 
-#image {
+.text {
+  font-family: "cga";
+  font-size: 1.1em;
   margin: auto;
-  height: 100%;
-  margin: 2%;
-  background-image: url("../images/cgabeach00.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  max-width: 628px;
+}
+
+.container {
+  background-color: #111; 
+  height: 100vh;
+  margin: auto;
+  max-width: 850px;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  height: auto;
+  margin: 0 auto 10px auto;
+  max-height: 700px;
+  max-width: 100%;
+}
+
+.author {
+  margin-left: 5%;
 }
