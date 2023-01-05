@@ -58,6 +58,14 @@ const quotes = {
              'forbidden by law.',
     'author': ' - Isabel Paterson',
   },
+
+  10: {
+    'quote': 'Freedom is not a permission granted by any authority. ' +
+             'Freedom is a fact. Whether or not this fact is known, ' +
+             'freedom is in the nature of every living person, ' +
+             'as gravitation is in the nature of this planet.',
+    'author': ' - Rose Wilder Lane',
+  },
 };
 
 let quoteIndex = Math.floor(Math.random() * Object.keys(quotes).length);
