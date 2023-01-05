@@ -35,8 +35,11 @@ body {
 .crt {
   background: url("../images/crt.png");
   height: 100vh;
+  left: 50%;
+  max-width: 1200px;
   opacity: 0.1;
-  position: absolute;
+  position: fixed;
+  transform: translateX(-50%);
   width: 100vw;
 }
 
