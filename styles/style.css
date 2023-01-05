@@ -4,8 +4,20 @@
   src: url("../fonts/Web437_IBM_CGA.woff");
 }
 
+@media (hover: hover) {
+  a:hover {
+    color: #5ff;
+  }
+}
+
+
 * {
   box-sizing: border-box;
+}
+
+a {
+  color: #eee;
+  text-decoration: none;
 }
 
 body {
@@ -15,15 +27,29 @@ body {
   width: 100vw;
 }
 
-@media (hover: hover) {
-  a:hover {
-    color: #5ff;
-  }
+.author {
+  font-size: 1rem;
+  margin-left: 5%;
 }
 
-a {
-  color: #eee;
-  text-decoration: none;
+.crt {
+  background: url("../images/crt.png");
+  height: 100vh;
+  opacity: 0.1;
+  position: absolute;
+  width: 100vw;
+}
+
+.image {
+  background: url("../images/beach00.png");
+  background-attachment: local;
+  background-position: top right;
+  background-size: cover;
+  box-shadow: 0 0 5px #222;
+  height: 100%;
+  margin: 0 auto 20px auto;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .text {
@@ -43,21 +69,4 @@ a {
   text-shadow: 1px 1px 1px #000;
   top: 0;
   width: 90%;
-}
-
-.image {
-  background: url("../images/beach00.png");
-  background-attachment: local;
-  background-position: top right;
-  background-size: cover;
-  box-shadow: 0 0 5px #222;
-  height: 100%;
-  margin: 0 auto 20px auto;
-  max-width: 1200px;
-  width: 100%;
-}
-
-.author {
-  font-size: 1rem;
-  margin-left: 5%;
 }
