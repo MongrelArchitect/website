@@ -57,19 +57,18 @@ body {
 
 .text {
   background: url("../images/dither.png");
-  bottom: 40%;
   box-shadow: 5px 5px 0 #444;
   font-family: "cga";
   font-size: 1.2rem;
   height: max-content;
-  left: 0;
   line-height: 1.2;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15%;
   margin: auto;
   max-width: 650px;
   padding: 24px;
-  position: absolute;
-  right: 0;
-  text-shadow: 1px 1px 1px #000;
-  top: 0;
+  position: fixed;
+  text-shadow: 2px 2px 2px #000;
   width: 90%;
 }
