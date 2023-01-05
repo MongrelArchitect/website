@@ -25,7 +25,7 @@ const quotes = {
 
   4: {
     'quote': 'There can be no truly moral choice unless that choice ' +
-             'is made in freedom',
+             'is made in freedom.',
     'author': ' - Murray Rothbard',
   },
 
@@ -43,7 +43,7 @@ const quotes = {
   },
 
   7: {
-    'quote': 'He who is unfit to serve his fellow citizens wants to rule them',
+    'quote': 'He who is unfit to serve his fellow citizens wants to rule them.',
     'author': ' - Ludwig von Mises',
   },
 
