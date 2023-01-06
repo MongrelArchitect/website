@@ -73,7 +73,7 @@ if (quoteIndex < 0) {
   quoteIndex = 0;
 }
 
-const quote = document.querySelector('#quote-link');
+const quote = document.querySelector('.text');
 const quoteText = document.querySelector('.quote');
 const quoteAuthor = document.querySelector('.author');
 
@@ -92,3 +92,5 @@ quote.addEventListener('click', () => {
     quoteAuthor.textContent = quotes[quoteIndex].author;
   }
 });
+
+// const backgrounds = ['beach00.png', 'beach01.png', 'mountains00.png',];
