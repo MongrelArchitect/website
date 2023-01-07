@@ -85,6 +85,13 @@ body {
   background-size: cover;
 }
 
+.mountains01{
+  background: url("../images/mountains01.png");
+  background-attachment: local;
+  background-position: top right;
+  background-size: cover;
+}
+
 .text {
   background: url("../images/dither4.png");
   box-shadow: 5px 5px 0 #444;

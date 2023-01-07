@@ -99,6 +99,7 @@ const backgrounds = [
   'city00', 
   'city01', 
   'mountains00',
+  'mountains01',
 ];
 
 const crt = document.querySelector('.crt');
