@@ -93,4 +93,22 @@ quote.addEventListener('click', () => {
   }
 });
 
-// const backgrounds = ['beach00.png', 'beach01.png', 'mountains00.png',];
+const backgrounds = [
+  'beach00', 
+  'beach01', 
+  'city00', 
+  'city01', 
+  'mountains00',
+];
+
+const crt = document.querySelector('.crt');
+const image = document.querySelector('.image');
+let bkgIndex = Math.floor(Math.random() * backgrounds.length);
+image.className = `image ${backgrounds[bkgIndex]}`;
+crt.addEventListener('click', () => {
+  bkgIndex += 1;
+  if (bkgIndex > backgrounds.length - 1) {
+    bkgIndex = 0;
+  }
+  image.className = `image ${backgrounds[bkgIndex]}`;
+});

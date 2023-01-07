@@ -29,6 +29,7 @@ body {
 
 .crt {
   background: url("../images/crt.png");
+  cursor: pointer;
   height: 100vh;
   left: 50%;
   max-width: 1200px;
@@ -39,7 +40,6 @@ body {
 }
 
 .image {
-  background: url("../images/beach00.png");
   background-attachment: local;
   background-position: top right;
   background-size: cover;
@@ -48,6 +48,41 @@ body {
   margin: 0 auto 20px auto;
   max-width: 1200px;
   width: 100%;
+}
+
+.beach00 {
+  background: url("../images/beach00.png");
+  background-attachment: local;
+  background-position: top right;
+  background-size: cover;
+}
+
+.beach01 {
+  background: url("../images/beach01.png");
+  background-attachment: local;
+  background-position: top right;
+  background-size: cover;
+}
+
+.city00{
+  background: url("../images/city00.png");
+  background-attachment: local;
+  background-position: top right;
+  background-size: cover;
+}
+
+.city01{
+  background: url("../images/city01.png");
+  background-attachment: local;
+  background-position: top right;
+  background-size: cover;
+}
+
+.mountains00{
+  background: url("../images/mountains00.png");
+  background-attachment: local;
+  background-position: top right;
+  background-size: cover;
 }
 
 .text {
