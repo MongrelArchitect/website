@@ -98,6 +98,9 @@ const backgrounds = [
   'beach01', 
   'city00', 
   'city01', 
+  'city02',
+  'grave00',
+  'grave01',
   'mountains00',
   'mountains01',
 ];
