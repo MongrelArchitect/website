@@ -1,70 +1,77 @@
 // Keys are used to cycle through quotes on page
 const quotes = {
   0: {
-    'quote': 'Those who are capable of tyranny are capable of perjury ' +
-             'to sustain it.',
-    'author': ' - Lysander Spooner',
+    quote:
+      'Those who are capable of tyranny are capable of perjury '
+      + 'to sustain it.',
+    author: ' - Lysander Spooner',
   },
 
   1: {
-    'quote': 'How can anyone read history and still trust politicians?',
-    'author': ' - Thomas Sowell',
+    quote: 'How can anyone read history and still trust politicians?',
+    author: ' - Thomas Sowell',
   },
 
   2: {
-    'quote': 'The only thing that makes life possible is permanent, ' +
-             'intolerable uncertainty.',
-    'author': ' - Ursula Le Guin',
+    quote:
+      'The only thing that makes life possible is permanent, '
+      + 'intolerable uncertainty.',
+    author: ' - Ursula Le Guin',
   },
 
   3: {
-    'quote': 'There is no magic. There is only knowledge, more or ' +
-             'less hidden.',
-    'author': ' - Gene Wolfe',
+    quote:
+      'There is no magic. There is only knowledge, more or less hidden.',
+    author: ' - Gene Wolfe',
   },
 
   4: {
-    'quote': 'There can be no truly moral choice unless that choice ' +
-             'is made in freedom.',
-    'author': ' - Murray Rothbard',
+    quote:
+      'There can be no truly moral choice unless that choice '
+      + 'is made in freedom.',
+    author: ' - Murray Rothbard',
   },
 
   5: {
-    'quote': 'There are two principles between which there can be no ' +
-             'compromise\: liberty and coercion.',
-    'author': ' - Frédéric Bastiat',
+    quote:
+      'There are two principles between which there can be no '
+      + 'compromise: liberty and coercion.',
+    author: ' - Frédéric Bastiat',
   },
 
   6: {
-    'quote': 'Anarchy is no guarantee that some people won\'t kill, ' +
-             'injure, kidnap, defraud, or steal from others. Government ' +
-             'is a guarantee that some will.',
-    'author': ' - Gustave de Molinari',
+    quote:
+      "Anarchy is no guarantee that some people won't kill, "
+      + 'injure, kidnap, defraud, or steal from others. Government '
+      + 'is a guarantee that some will.',
+    author: ' - Gustave de Molinari',
   },
 
   7: {
-    'quote': 'He who is unfit to serve his fellow citizens wants to rule them.',
-    'author': ' - Ludwig von Mises',
+    quote: 'He who is unfit to serve his fellow citizens wants to rule them.',
+    author: ' - Ludwig von Mises',
   },
 
   8: {
-    'quote': 'Part of freedom is the right of each of us to go to hell ' +
-              'in his own fashion.',
-    'author': ' - David D. Friedman',
+    quote:
+      'Part of freedom is the right of each of us to go to hell '
+      + 'in his own fashion.',
+    author: ' - David D. Friedman',
   },
 
   9: {
-    'quote': 'Poverty can be brought about by law; it cannot be ' +
-             'forbidden by law.',
-    'author': ' - Isabel Paterson',
+    quote:
+      'Poverty can be brought about by law; it cannot be '
+      + 'forbidden by law.',
+    author: ' - Isabel Paterson',
   },
 
   10: {
-    'quote': 'Freedom is not a permission granted by any authority. ' +
-             'Freedom is a fact. Whether or not this fact is known, ' +
-             'freedom is in the nature of every living person, ' +
-             'as gravitation is in the nature of this planet.',
-    'author': ' - Rose Wilder Lane',
+    quote:
+      'Freedom is not a permission granted by any authority ... '
+      + 'freedom is in the nature of every living person, '
+      + 'as gravitation is in the nature of this planet.',
+    author: ' - Rose Wilder Lane',
   },
 };
 
@@ -94,10 +101,10 @@ quote.addEventListener('click', () => {
 });
 
 const backgrounds = [
-  'beach00', 
-  'beach01', 
-  'city00', 
-  'city01', 
+  'beach00',
+  'beach01',
+  'city00',
+  'city01',
   'city02',
   'grave00',
   'grave01',
