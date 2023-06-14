@@ -83,7 +83,7 @@ nav a.active {
 }
 
 .portfolio h3 {
-  color: #C40000;
+  color: #c40000;
 }
 
 .portfolio .about,
@@ -97,6 +97,8 @@ nav a.active {
   background-image: url("../images/sean.png");
   background-repeat: no-repeat;
   background-size: cover;
+  border: 1px solid #333;
+  box-shadow: 5px 5px 0 #333;
   height: 80vw;
   max-height: 344px;
   max-width: 344px;
@@ -104,6 +106,7 @@ nav a.active {
 
 .portfolio .project {
   background-color: #c4c4c4;
+  border: 1px solid #333;
   color: #001;
   display: flex;
   flex-direction: column;
@@ -128,6 +131,8 @@ nav a.active {
   aspect-ratio: 1 / 1;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 1px solid #333;
+  box-shadow: 5px 5px 0 #444;
   height: 80vw;
   max-height: 344px;
   max-width: 344px;
