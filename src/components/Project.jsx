@@ -15,7 +15,9 @@ export default function Project({
 
   return (
     <div className="project">
-      <div className="screenshot" style={screenshotStyle} />
+      <div className="image-container">
+        <div className="screenshot" style={screenshotStyle} />
+      </div>
       <div className="project-title">
         <h3>{name}</h3>
         <div className="project-links">
