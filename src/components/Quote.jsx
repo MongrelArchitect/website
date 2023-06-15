@@ -1,12 +1,10 @@
 import React from 'react';
 
-export default function Quote() {
+export default function Quote({ quote }) {
   return (
     <article className="quote">
-      <p>
-        Those who are capable of tyranny are capable of perjury to sustain it.
-      </p>
-      <p className="author">Lysander Spooner</p>
+      <p>{quote.text}</p>
+      <p className="author">{quote.author}</p>
     </article>
   );
 }

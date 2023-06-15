@@ -29,6 +29,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+  justify-content: space-between;
   padding: 0.8rem;
 }
 
@@ -56,13 +57,57 @@ nav a.active {
   background-attachment: local;
   background-position: top right;
   background-size: cover;
-  background-image: url("../images/beach00.png");
   box-shadow: 0 0 5px #333;
   display: flex;
   flex-direction: column;
   margin: auto;
   max-width: 1000px;
   min-height: 100vh;
+}
+
+.container .control {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.container .control button {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #f3f34e;
+  cursor: pointer;
+  font-family: ega, Arial, sans-serif;
+  font-size: 1.6rem;
+  padding: 0;
+}
+
+.container .control button:focus,
+.container .control button:hover {
+  border-bottom: 2px dashed #f3f34e;
+}
+
+.container .control button .quote-icon {
+  transform: translateY(1px);
+}
+
+.container .control-icon {
+  height: 32px;
+  filter: 
+    invert(99%) 
+    sepia(88%) 
+    saturate(1187%) 
+    hue-rotate(349deg) 
+    brightness(106%) 
+    contrast(91%);
+}
+
+.container .control button:focus,
+.container .control button:hover {
+  text-decoration: underline dashed;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 .home,

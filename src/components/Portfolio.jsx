@@ -4,10 +4,10 @@ import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
 
-export default function Portfolio() {
+export default function Portfolio({ changeBackground }) {
   return (
     <main className="portfolio">
-      <Nav />
+      <Nav changeBackground={changeBackground} />
       <div className="info">
         <About />
         <Projects />
