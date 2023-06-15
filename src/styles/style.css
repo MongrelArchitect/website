@@ -32,7 +32,8 @@ nav {
   padding: 0.8rem;
 }
 
-nav a {
+nav a,
+.portfolio a {
   color: #f3f34e;
   text-decoration: none;
 }
@@ -40,7 +41,9 @@ nav a {
 nav a:hover,
 nav a:focus,
 nav a.active:hover,
-nav a.active:focus {
+nav a.active:focus,
+.portfolio a:hover,
+.portfolio a:focus {
   text-decoration: underline dashed;
 }
 
@@ -87,6 +90,7 @@ nav a.active {
 }
 
 .portfolio .about,
+.portfolio .contact,
 .portfolio .projects {
   display: flex;
   flex-direction: column;
