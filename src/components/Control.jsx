@@ -8,15 +8,18 @@ export default function Control({ changeBackground, changeQuote }) {
 
   return (
     <div className="control">
-      {location.pathname === '/' ? (
-        <button onClick={changeQuote} title="change quote" type="button">
-          <img
-            alt="change quote"
-            className="control-icon quote-icon"
-            src={quoteIcon}
-          />
-        </button>
-      ) : null}
+      <button
+        hidden={location.pathname !== '/'}
+        onClick={changeQuote}
+        title="change quote"
+        type="button"
+      >
+        <img
+          alt="change quote"
+          className="control-icon quote-icon"
+          src={quoteIcon}
+        />
+      </button>
       <button onClick={changeBackground} type="button">
         <img
           alt="change background"

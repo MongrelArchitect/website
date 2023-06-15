@@ -1,16 +1,7 @@
 @font-face {
-  font-family: "cga";
-  src: url("../fonts/cga.woff");
-}
-
-@font-face {
+  font-display: swap;
   font-family: "ega";
   src: url("../fonts/ega.woff");
-}
-
-@font-face {
-  font-family: "vga";
-  src: url("../fonts/vga.woff");
 }
 
 * {
@@ -52,6 +43,12 @@ nav a.active {
   text-decoration: underline;
 }
 
+nav .links {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
 .container {
   align-items: center;
   background-attachment: local;
@@ -67,8 +64,6 @@ nav a.active {
 
 .container .control {
   display: flex;
-  align-items: center;
-  flex-direction: row;
   gap: 8px;
 }
 
@@ -81,6 +76,7 @@ nav a.active {
   font-family: ega, Arial, sans-serif;
   font-size: 1.6rem;
   padding: 0;
+  transform: translateY(6px);
 }
 
 .container .control button:focus,

@@ -5,7 +5,7 @@ import Control from './Control';
 export default function Nav({ changeBackground, changeQuote }) {
   return (
     <nav>
-      <div>
+      <div className="links">
         <NavLink to="/">Home</NavLink>
         |
         <NavLink to="/portfolio">Sean</NavLink>

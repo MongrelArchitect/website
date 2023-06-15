@@ -1,11 +1,11 @@
 import React from 'react';
 import Project from './Project';
-import chedditImage from '../images/cheddit.png';
-import findemImage from '../images/findem.png';
-import gememoryImage from '../images/gememory.png';
-import fineartImage from '../images/fineart.png';
-import battleshipImage from '../images/battleship.png';
-import todoImage from '../images/todoit.png';
+import chedditImage from '../images/cheddit.jpg';
+import findemImage from '../images/findem.jpg';
+import gememoryImage from '../images/gememory.jpg';
+import fineartImage from '../images/fineart.jpg';
+import battleshipImage from '../images/battleship.jpg';
+import todoImage from '../images/todoit.jpg';
 
 export default function Projects() {
   const myProjects = [
