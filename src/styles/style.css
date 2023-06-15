@@ -84,19 +84,8 @@ nav .links {
   border-bottom: 2px dashed #f3f34e;
 }
 
-.container .control button .quote-icon {
-  transform: translateY(1px);
-}
-
 .container .control-icon {
   height: 32px;
-  filter: 
-    invert(99%) 
-    sepia(88%) 
-    saturate(1187%) 
-    hue-rotate(349deg) 
-    brightness(106%) 
-    contrast(91%);
 }
 
 .container .control button:focus,
@@ -138,7 +127,8 @@ nav .links {
   gap: 8px;
 }
 
-.portfolio .about .headshot {
+.portfolio .about .headshot,
+.portfolio .contact-photo {
   background-image: url("../images/sean.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -147,6 +137,10 @@ nav .links {
   height: 80vw;
   max-height: 344px;
   max-width: 344px;
+}
+
+.portfolio .contact .contact-photo {
+  background-image: url("../images/hiking.png");
 }
 
 .portfolio .project {
@@ -162,6 +156,7 @@ nav .links {
 
 .portfolio .project img.link-icon {
   height: 32px;
+  transform: translateY(2px);
 }
 
 .portfolio .project .project-links,

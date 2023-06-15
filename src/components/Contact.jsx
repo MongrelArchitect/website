@@ -14,6 +14,7 @@ export default function Contact() {
           set@seanericthomas.com
         </a>
       </p>
+      <div className="contact-photo" />
     </article>
   );
 }

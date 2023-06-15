@@ -1,6 +1,6 @@
 import React from 'react';
-import githubIcon from '../images/github.svg';
-import linkIcon from '../images/open-in-new.svg';
+import githubIcon from '../images/github.png';
+import linkIcon from '../images/open-in-new.png';
 
 export default function Project({
   description,
@@ -21,18 +21,18 @@ export default function Project({
         <div className="project-links">
           <a href={github}>
             <img
-              alt="View this project on Github"
+              alt="View project on Github"
               className="link-icon"
               src={githubIcon}
-              title="View this project on Github"
+              title="View project on Github"
             />
           </a>
           <a target="_blank" href={liveDemo} rel="noreferrer">
             <img
-              alt="Link to live demo (new tab)"
+              alt="Live demo (new tab)"
               className="link-icon"
               src={linkIcon}
-              title="Link to live demo (new tab)"
+              title="Live demo (new tab)"
             />
           </a>
         </div>
