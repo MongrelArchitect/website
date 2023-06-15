@@ -23,10 +23,10 @@ export default function Project({
         <div className="project-links">
           <a href={github}>
             <img
-              alt="View project on Github"
+              alt="View project on GitHub"
               className="link-icon"
               src={githubIcon}
-              title="View project on Github"
+              title="View project on GitHub"
             />
           </a>
           <a target="_blank" href={liveDemo} rel="noreferrer">
