@@ -6,16 +6,18 @@ export default function Projects() {
   return (
     <article className="projects">
       <h2>My Work</h2>
-      {myProjects.map((project) => (
-        <Project
-          description={project.description}
-          github={project.github}
-          image={project.image}
-          key={project.name}
-          liveDemo={project.liveDemo}
-          name={project.name}
-        />
-      ))}
+      <div className="projects-grid">
+        {myProjects.map((project) => (
+          <Project
+            description={project.description}
+            github={project.github}
+            image={project.image}
+            key={project.name}
+            liveDemo={project.liveDemo}
+            name={project.name}
+          />
+        ))}
+      </div>
     </article>
   );
 }

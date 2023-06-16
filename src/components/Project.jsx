@@ -39,7 +39,7 @@ export default function Project({
           </a>
         </div>
       </div>
-      <p>{description}</p>
+      <p className="project-description">{description}</p>
     </div>
   );
 }
