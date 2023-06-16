@@ -12,8 +12,8 @@ export default function About() {
         <div className="about-large">
           <h2>About Me</h2>
           <p>
-            I&apos;m a web developer from southern California. I like guitar,
-            reading and hiking with my kids.
+            I&apos;m a web developer from southern California. I like playing
+            guitar, reading and hiking with my kids.
           </p>
         </div>
       </div>
@@ -22,8 +22,8 @@ export default function About() {
         <h2>About Me</h2>
         <div className="project">
           <p>
-            I&apos;m a web developer from southern California. I like guitar,
-            reading and hiking with my kids.
+            I&apos;m a web developer from southern California. I like playing
+            guitar, reading and hiking with my kids.
           </p>
         </div>
       </div>
