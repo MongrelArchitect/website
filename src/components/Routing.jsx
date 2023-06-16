@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Portfolio from './Portfolio';
+import None from './None';
 
 export default function Routing({ changeBackground, changeQuote, quote }) {
   return (
@@ -19,6 +20,10 @@ export default function Routing({ changeBackground, changeQuote, quote }) {
       <Route
         path="/portfolio"
         element={<Portfolio changeBackground={changeBackground} />}
+      />
+      <Route
+        path="/*"
+        element={<None changeBackground={changeBackground} />}
       />
     </Routes>
   );

@@ -29,7 +29,9 @@ body nav a:focus,
 body nav a.active:hover,
 body nav a.active:focus,
 .portfolio a:hover,
-.portfolio a:focus {
+.portfolio a:focus,
+.invalid a:hover,
+.invalid a:focus {
   text-decoration: underline dashed;
 }
 
@@ -90,7 +92,8 @@ nav .links {
 }
 
 .home nav a,
-.portfolio nav a {
+.portfolio nav a,
+.invalid a {
   color: #f3f34e;
   text-decoration: none;
 }
