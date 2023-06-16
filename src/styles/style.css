@@ -252,6 +252,26 @@ nav .links {
   width: 100%;
 }
 
+.portfolio .skills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portfolio .skills ul {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  font-size: 0.9rem;
+}
+
+.portfolio .skills .skill-icon {
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  filter: brightness(0);
+}
+
 .quote,
 .info {
   background: rgba(16, 16, 16, 0.7);
@@ -322,6 +342,12 @@ nav .links {
     display: grid;
     gap: 8px;
     grid-template-rows: auto 2rem 1fr;
+  }
+
+  .portfolio .skills ul {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
   }
 }
 

@@ -13,10 +13,9 @@ export default function About() {
           <h2>About Me</h2>
           <p>
             I&apos;m a web developer from southern California. I like guitar,
-            reading and hiking with my kids. I am good at computer.
+            reading and hiking with my kids.
           </p>
         </div>
-
       </div>
 
       <div className="about-small">
@@ -24,7 +23,7 @@ export default function About() {
         <div className="project">
           <p>
             I&apos;m a web developer from southern California. I like guitar,
-            reading and hiking with my kids. I am good at computer.
+            reading and hiking with my kids.
           </p>
         </div>
       </div>
