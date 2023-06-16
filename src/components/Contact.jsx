@@ -1,5 +1,6 @@
 import React from 'react';
 import githubIcon from '../images/github.png';
+import linkedIn from '../images/linkedin.png';
 
 export default function Contact() {
   return (
@@ -9,13 +10,24 @@ export default function Contact() {
         <div className="contact-info">
           <p>Let&apos;s work together and make good times for all!</p>
           <div className="contact-details">
-            <p className="details">
+            <p className="details icons">
               <a href="https://github.com/MongrelArchitect" title="Github">
                 <img
                   alt="GitHub"
                   className="link-icon"
                   src={githubIcon}
                   title="GitHub"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sean-eric-thomas/"
+                title="LinkedIn"
+              >
+                <img
+                  alt="LinkedIn"
+                  className="link-icon"
+                  src={linkedIn}
+                  title="LinkedIn"
                 />
               </a>
             </p>
@@ -34,9 +46,7 @@ export default function Contact() {
         <div className="image-container">
           <div className="contact-photo" />
         </div>
-        <p className="latin">
-          Tu ne cede malis sed contra audentior ito.
-        </p>
+        <p className="latin">Tu ne cede malis sed contra audentior ito.</p>
       </div>
     </article>
   );

@@ -180,6 +180,11 @@ nav .links {
   gap: 8px;
 }
 
+.portfolio .contact .contact-details .icons {
+  display: flex;
+  gap: 16px;
+}
+
 .portfolio .contact .details {
   font-size: 1.5rem;
 }
