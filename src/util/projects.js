@@ -3,7 +3,7 @@ import findemImage from '../images/findem.jpg';
 import gememoryImage from '../images/gememory.jpg';
 import fineartImage from '../images/fineart.jpg';
 import battleshipImage from '../images/battleship.jpg';
-import todoImage from '../images/todoit.jpg';
+import inventoryImage from '../images/invertebratorium.jpg';
 
 const myProjects = [
   {
@@ -21,6 +21,15 @@ const myProjects = [
     image: findemImage,
     liveDemo: 'https://waldo-c3546.web.app/',
     name: "Find 'Em",
+  },
+  {
+    description:
+      'An inventory management application for an imaginary store,'
+      + ' using Node.js + Express with MongoDB.',
+    github: 'https://github.com/MongrelArchitect/inventory-app',
+    image: inventoryImage,
+    liveDemo: 'https://still-brook-1613.fly.dev/',
+    name: 'Inventory App',
   },
   {
     description:
@@ -47,15 +56,6 @@ const myProjects = [
     image: battleshipImage,
     liveDemo: 'https://mongrelarchitect.github.io/battleship/',
     name: 'Battleship',
-  },
-  {
-    description:
-      'A todo list application, using local storage or remote authentication'
-      + ' to save tasks.',
-    github: 'https://github.com/MongrelArchitect/todo-list',
-    image: todoImage,
-    liveDemo: 'https://todo-list-89ba6.firebaseapp.com/',
-    name: 'ToDoIt',
   },
 ];
 
