@@ -2,7 +2,7 @@ import chedditImage from '../images/cheddit.jpg';
 import findemImage from '../images/findem.jpg';
 import gememoryImage from '../images/gememory.jpg';
 import fineartImage from '../images/fineart.jpg';
-import battleshipImage from '../images/battleship.jpg';
+import membersOnlyImage from '../images/membersonly.jpg';
 import inventoryImage from '../images/invertebratorium.jpg';
 
 const myProjects = [
@@ -14,6 +14,15 @@ const myProjects = [
     image: chedditImage,
     liveDemo: 'https://cheddit.net',
     name: 'Cheddit',
+  },
+  {
+    description:
+      'A messageboard where users must enter a "secret code" to view'
+      + ' authors and timestamps.',
+    github: 'https://github.com/MongrelArchitect/members-only',
+    image: membersOnlyImage,
+    liveDemo: 'https://shy-night-2038.fly.dev/',
+    name: 'Members Only',
   },
   {
     description: 'A Where\'s Waldo style "find the character" game.',
@@ -29,7 +38,7 @@ const myProjects = [
     github: 'https://github.com/MongrelArchitect/inventory-app',
     image: inventoryImage,
     liveDemo: 'https://still-brook-1613.fly.dev/',
-    name: 'Inventory App',
+    name: 'Inventory',
   },
   {
     description:
@@ -47,15 +56,6 @@ const myProjects = [
     image: fineartImage,
     liveDemo: 'http://mendelsohnbassfineart.com/',
     name: 'Art Gallery',
-  },
-  {
-    description:
-      'The classic board game, now in your browser! Play against a semi'
-      + ' intelligent computer opponent.',
-    github: 'https://github.com/MongrelArchitect/battleship',
-    image: battleshipImage,
-    liveDemo: 'https://mongrelarchitect.github.io/battleship/',
-    name: 'Battleship',
   },
 ];
 
