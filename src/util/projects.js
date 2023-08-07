@@ -37,7 +37,7 @@ const myProjects = [
       + ' using Node.js + Express with MongoDB.',
     github: 'https://github.com/MongrelArchitect/inventory-app',
     image: inventoryImage,
-    liveDemo: 'https://still-brook-1613.fly.dev/',
+    liveDemo: 'https://withered-sky-7506.fly.dev/',
     name: 'Inventory',
   },
   {
