@@ -280,6 +280,22 @@ nav .links {
   filter: brightness(0);
 }
 
+.project .post-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  justify-content: space-between;
+}
+
+.project .post-info h1 {
+  color: #c40000;
+}
+
+.project .post-info.time {
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
 .quote,
 .info {
   background: rgba(16, 16, 16, 0.7);

@@ -9,6 +9,8 @@ export default function Nav({ changeBackground, changeQuote }) {
         <NavLink to="/">Home</NavLink>
         |
         <NavLink to="/portfolio">Sean</NavLink>
+        |
+        <NavLink to="/blog">Blog</NavLink>
       </div>
       <Control changeBackground={changeBackground} changeQuote={changeQuote} />
     </nav>
