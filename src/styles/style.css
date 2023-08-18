@@ -280,20 +280,28 @@ nav .links {
   filter: brightness(0);
 }
 
+.project.blog-post {
+  gap: 16px;
+}
+
+.project h1.blog-title {
+  color: #c40000;
+  font-size: 32px;
+}
+
 .project .post-info {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
-  justify-content: space-between;
-}
-
-.project .post-info h1 {
-  color: #c40000;
-}
-
-.project .post-info.time {
-  font-style: italic;
+  flex-direction: column;
   font-size: 1.4rem;
+  margin-left: 2rem;
+  gap: 8px;
+}
+
+.project .post-info .post-timestamp {
+  display: flex;
+  flex-wrap: wrap;
+  font-style: italic;
+  gap: 8px;
 }
 
 .quote,

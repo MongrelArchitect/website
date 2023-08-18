@@ -13,7 +13,6 @@ export default function Blog({ changeBackground }) {
         const result = await response.json();
         const { posts } = result;
         if (posts) {
-          console.log(posts);
           setBlogPosts(posts);
         }
       } catch (err) {
@@ -27,6 +26,7 @@ export default function Blog({ changeBackground }) {
     <main className="portfolio">
       <Nav changeBackground={changeBackground} />
       <div className="info">
+        <h1>Abstractions</h1>
         {blogPosts.length ? (
           blogPosts.map((post) => (
             <BlogPost key={post._id} post={post} />
