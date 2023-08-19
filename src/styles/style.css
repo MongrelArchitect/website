@@ -302,23 +302,24 @@ nav .links {
 }
 
 .project.blog-post .comment-form form,
-.project.blog-post .comment-form form label {
+.project.blog-post label {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.project.blog-post .comment-form form label {
+.project.blog-post label {
   gap: 4px;
 }
 
 .project.blog-post .post-header .post-control {
   display: flex;
   gap: 8px;
+  margin-bottom: 16px;
 }
 
 .project.blog-post .comment-form form button,
-.project.blog-post .post-header button {
+.project.blog-post .post-control button {
   background: #0000c4;
   border: none;
   color: #eee;
@@ -330,33 +331,34 @@ nav .links {
   padding: 8px;
 }
 
-.project.blog-post .post-header button.edit {
-}
-
-.project.blog-post .post-header button.delete {
+.project.blog-post .post-control button.delete {
   background: #c40000;
 }
 
-.project.blog-post .post-header button:focus,
-.project.blog-post .post-header button:hover,
+.project.blog-post .post-control button.submit-edit{
+  background: #c400c4;
+}
+
+.project.blog-post .post-control button:focus,
+.project.blog-post .post-control button:hover,
 .project.blog-post .comment-form form button:hover,
 .project.blog-post .comment-form form button:focus {
   outline: 4px solid #001;
 }
 
-.project.blog-post .comment-form form input:hover,
-.project.blog-post .comment-form form textarea:hover {
+.project.blog-post input:hover,
+.project.blog-post textarea:hover {
   outline: 4px solid #111;
 }
 
-.project.blog-post .comment-form form input:focus,
-.project.blog-post .comment-form form textarea:focus {
+.project.blog-post input:focus,
+.project.blog-post textarea:focus {
   outline: 4px solid #0000c4;
 }
 
 
-.project.blog-post .comment-form form input,
-.project.blog-post .comment-form form textarea {
+.project.blog-post input,
+.project.blog-post textarea {
   background: #eee;
   border: 2px solid #111;
   font-family: ega, Arial, sans-serif;

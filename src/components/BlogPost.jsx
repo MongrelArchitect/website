@@ -8,9 +8,16 @@ export default function BlogPost({ post, triggerDbPosts }) {
 
   const [postComments, setPostComments] = useState([]);
   const [dbTrigger, setDbTrigger] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [editingTitle, setEditingTitle] = useState(post.title);
+  const [editingText, setEditingText] = useState(post.text);
 
-  const triggerDb = () => {
-    setDbTrigger(!dbTrigger);
+  const changeEditingText = (event) => {
+    setEditingText(event.target.value);
+  };
+
+  const changeEditingTitle = (event) => {
+    setEditingTitle(event.target.value);
   };
 
   const deletePost = async () => {
@@ -48,6 +55,22 @@ export default function BlogPost({ post, triggerDbPosts }) {
     }
   };
 
+  const toggleEdit = async (event) => {
+    const { target } = event;
+    if (editing) {
+      target.textContent = 'Edit Post';
+    } else {
+      target.textContent = 'Cancel Edit';
+    }
+    setEditingTitle(post.title);
+    setEditingText(post.text);
+    setEditing(!editing);
+  };
+
+  const triggerDb = () => {
+    setDbTrigger(!dbTrigger);
+  };
+
   useEffect(() => {
     getComments();
   }, [dbTrigger]);
@@ -55,17 +78,52 @@ export default function BlogPost({ post, triggerDbPosts }) {
   return (
     <article className="project blog-post">
       <div className="post-header">
-        <h1 className="blog-title">{post.title}</h1>
         {token ? (
           <span className="post-control">
-            <button className="edit" type="button">Edit</button>
+            <button className="edit" onClick={toggleEdit} type="button">
+              Edit Post
+            </button>
             <button className="delete" onClick={deletePost} type="button">
-              Delete
+              Delete Post
             </button>
           </span>
         ) : null}
+        {editing ? (
+          <div>
+            <label htmlFor={`editingTitle${post._id}`}>
+              Title
+              <input
+                id={`editingTitle${post._id}`}
+                onChange={changeEditingTitle}
+                type="text"
+                value={editingTitle || ''}
+              />
+            </label>
+          </div>
+        ) : (
+          <h1 className="blog-title">{post.title}</h1>
+        )}
       </div>
-      <div>{post.text}</div>
+      {editing ? (
+        <div>
+          <label htmlFor={`editingText${post._id}`}>
+            Text
+            <textarea
+              id={`editingText${post._id}`}
+              onChange={changeEditingText}
+              rows="5"
+              value={editingText || ''}
+            />
+          </label>
+        </div>
+      ) : (
+        <div>{post.text}</div>
+      )}
+      {editing ? (
+        <div className="post-control">
+          <button className="submit-edit" type="button">Submit Edit</button>
+        </div>
+      ) : null}
       <div className="post-info">
         <span>{post.author}</span>
         <div className="post-timestamp">
