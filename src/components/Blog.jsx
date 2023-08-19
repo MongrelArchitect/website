@@ -4,6 +4,8 @@ import Nav from './Nav';
 import apiUrl from '../util/api';
 
 export default function Blog({ changeBackground }) {
+  const token = localStorage.getItem('token');
+
   const [blogPosts, setBlogPosts] = useState([]);
   const [dbTriggerPosts, setDbTriggerPosts] = useState(false);
 
@@ -14,7 +16,11 @@ export default function Blog({ changeBackground }) {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const response = await fetch(apiUrl.allPosts);
+        const fetchOptions = {};
+        if (token) {
+          fetchOptions.headers = { Authorization: `Bearer ${token}` };
+        }
+        const response = await fetch(apiUrl.allPosts, fetchOptions);
         const result = await response.json();
         const { posts } = result;
         if (posts) {
