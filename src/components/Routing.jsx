@@ -2,8 +2,9 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Blog from './Blog';
 import Home from './Home';
-import Portfolio from './Portfolio';
+import Login from './Login';
 import None from './None';
+import Portfolio from './Portfolio';
 
 export default function Routing({ changeBackground, changeQuote, quote }) {
   return (
@@ -21,6 +22,10 @@ export default function Routing({ changeBackground, changeQuote, quote }) {
       <Route
         path="/blog"
         element={<Blog changeBackground={changeBackground} />}
+      />
+      <Route
+        path="/login"
+        element={<Login changeBackground={changeBackground} />}
       />
       <Route
         path="/portfolio"

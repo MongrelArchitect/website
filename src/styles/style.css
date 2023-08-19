@@ -319,9 +319,19 @@ nav .links {
   cursor: pointer;
   font-family: ega, Arial, sans-serif;
   font-size: 1.4rem;
-  max-width: 300px;
+  max-width: 50%;
   outline: none;
   padding: 8px;
+}
+
+.project.blog-post .comment-form form button:hover,
+.project.blog-post .comment-form form button:focus {
+  outline: 4px solid #001;
+}
+
+.project.blog-post .comment-form form input:hover,
+.project.blog-post .comment-form form textarea:hover {
+  outline: 4px solid #111;
 }
 
 .project.blog-post .comment-form form input:focus,
@@ -329,15 +339,6 @@ nav .links {
   outline: 4px solid #0000c4;
 }
 
-.project.blog-post .comment-form form button:hover,
-.project.blog-post .comment-form form button:focus {
-  outline: 4px solid #4e4edc;
-}
-
-.project.blog-post .comment-form form input:hover,
-.project.blog-post .comment-form form textarea:hover {
-  outline: 4px solid #111;
-}
 
 .project.blog-post .comment-form form input,
 .project.blog-post .comment-form form textarea {
