@@ -17,6 +17,7 @@ export default function Blog({ changeBackground }) {
     const getPosts = async () => {
       try {
         const fetchOptions = {};
+        // send valid token to include unpublished posts
         if (token) {
           fetchOptions.headers = { Authorization: `Bearer ${token}` };
         }
