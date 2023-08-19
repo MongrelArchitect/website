@@ -3,14 +3,16 @@ import Comment from './Comment';
 import CommentForm from './CommentForm';
 import apiUrl from '../util/api';
 
+const he = require('he');
+
 export default function BlogPost({ post, triggerDbPosts }) {
   const token = localStorage.getItem('token');
 
   const [postComments, setPostComments] = useState([]);
   const [dbTrigger, setDbTrigger] = useState(false);
   const [editing, setEditing] = useState(false);
-  const [editingTitle, setEditingTitle] = useState(post.title);
-  const [editingText, setEditingText] = useState(post.text);
+  const [editingTitle, setEditingTitle] = useState(he.decode(post.title));
+  const [editingText, setEditingText] = useState(he.decode(post.text));
 
   const changeEditingText = (event) => {
     setEditingText(event.target.value);
@@ -83,8 +85,8 @@ export default function BlogPost({ post, triggerDbPosts }) {
   };
 
   const toggleEdit = async () => {
-    setEditingTitle(post.title);
-    setEditingText(post.text);
+    setEditingTitle(he.decode(post.title));
+    setEditingText(he.decode(post.text));
     setEditing(!editing);
   };
 
@@ -122,7 +124,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
             </label>
           </div>
         ) : (
-          <h1 className="blog-title">{post.title}</h1>
+          <h1 className="blog-title">{he.decode(post.title)}</h1>
         )}
       </div>
       {editing ? (
@@ -138,7 +140,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
           </label>
         </div>
       ) : (
-        <div>{post.text}</div>
+        <div>{he.decode(post.text)}</div>
       )}
       {editing ? (
         <div className="post-control">

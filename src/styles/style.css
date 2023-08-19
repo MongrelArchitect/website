@@ -282,6 +282,7 @@ nav .links {
 
 .project.blog-post {
   gap: 16px;
+  white-space: pre-wrap;
 }
 
 .project.blog-post .comment {
@@ -465,4 +466,3 @@ nav .links {
     grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
   }
 }
-
