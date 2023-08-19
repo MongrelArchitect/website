@@ -294,6 +294,61 @@ nav .links {
   padding: 8px;
 }
 
+.project.blog-post .comment-form {
+  background: #eee;
+  box-shadow: 5px 5px 0 #444;
+  color: #111;
+  padding: 8px;
+}
+
+.project.blog-post .comment-form form,
+.project.blog-post .comment-form form label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project.blog-post .comment-form form label {
+  gap: 4px;
+}
+
+.project.blog-post .comment-form form button {
+  background: #0000c4;
+  border: none;
+  color: #eee;
+  cursor: pointer;
+  font-family: ega, Arial, sans-serif;
+  font-size: 1.4rem;
+  max-width: 300px;
+  outline: none;
+  padding: 8px;
+}
+
+.project.blog-post .comment-form form input:focus,
+.project.blog-post .comment-form form textarea:focus {
+  outline: 4px solid #0000c4;
+}
+
+.project.blog-post .comment-form form button:hover,
+.project.blog-post .comment-form form button:focus {
+  outline: 4px solid #4e4edc;
+}
+
+.project.blog-post .comment-form form input:hover,
+.project.blog-post .comment-form form textarea:hover {
+  outline: 4px solid #111;
+}
+
+.project.blog-post .comment-form form input,
+.project.blog-post .comment-form form textarea {
+  background: #eee;
+  border: 2px solid #111;
+  font-family: ega, Arial, sans-serif;
+  font-size: 1.4rem;
+  outline: none;
+  padding: 4px;
+}
+
 .project h1.blog-title {
   color: #c40000;
   font-size: 32px;

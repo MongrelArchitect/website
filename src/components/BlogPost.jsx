@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import Comment from './Comment';
+import CommentForm from './CommentForm';
 import apiUrl from '../util/api';
 
 export default function BlogPost({ post }) {
   const [postComments, setPostComments] = useState([]);
+  const [dbTrigger, setDbTrigger] = useState(false);
+
+  const getComments = async () => {
+    try {
+      const response = await fetch(apiUrl.postComments(post._id));
+      const result = await response.json();
+      const { comments } = result;
+      if (comments) {
+        setPostComments(comments);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const triggerDb = () => {
+    setDbTrigger(!dbTrigger);
+  };
 
   useEffect(() => {
-    const getComments = async () => {
-      try {
-        const response = await fetch(apiUrl.postComments(post._id));
-        const result = await response.json();
-        const { comments } = result;
-        if (comments) {
-          setPostComments(comments);
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    };
     getComments();
-  }, []);
+  }, [dbTrigger]);
 
   return (
     <article className="project blog-post">
@@ -38,11 +45,14 @@ export default function BlogPost({ post }) {
           ) : null}
         </div>
       </div>
+      {postComments.length ? <h3>Comments</h3> : null}
       {postComments.length
         ? postComments.map((comment) => (
           <Comment comment={comment} key={comment._id} />
         ))
         : null}
+      <h3>New Comment</h3>
+      <CommentForm post={post} triggerDb={triggerDb} />
     </article>
   );
 }
