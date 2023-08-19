@@ -284,6 +284,16 @@ nav .links {
   gap: 16px;
 }
 
+.project.blog-post .comment {
+  background: #eee;
+  box-shadow: 5px 5px 0 #444;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  gap: 8px;
+  padding: 8px;
+}
+
 .project h1.blog-title {
   color: #c40000;
   font-size: 32px;
