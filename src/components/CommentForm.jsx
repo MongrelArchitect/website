@@ -26,6 +26,8 @@ export default function CommentForm({ post, triggerDb }) {
       setAuthor('');
       setText('');
     } catch (err) {
+      // XXX
+      // handle errors better
       console.error(err);
     }
   };

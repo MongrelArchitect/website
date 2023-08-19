@@ -312,7 +312,13 @@ nav .links {
   gap: 4px;
 }
 
-.project.blog-post .comment-form form button {
+.project.blog-post .post-header .post-control {
+  display: flex;
+  gap: 8px;
+}
+
+.project.blog-post .comment-form form button,
+.project.blog-post .post-header button {
   background: #0000c4;
   border: none;
   color: #eee;
@@ -324,6 +330,15 @@ nav .links {
   padding: 8px;
 }
 
+.project.blog-post .post-header button.edit {
+}
+
+.project.blog-post .post-header button.delete {
+  background: #c40000;
+}
+
+.project.blog-post .post-header button:focus,
+.project.blog-post .post-header button:hover,
 .project.blog-post .comment-form form button:hover,
 .project.blog-post .comment-form form button:focus {
   outline: 4px solid #001;

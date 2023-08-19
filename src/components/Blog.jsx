@@ -5,6 +5,11 @@ import apiUrl from '../util/api';
 
 export default function Blog({ changeBackground }) {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [dbTriggerPosts, setDbTriggerPosts] = useState(false);
+
+  const triggerDbPosts = () => {
+    setDbTriggerPosts(!dbTriggerPosts);
+  };
 
   useEffect(() => {
     const getPosts = async () => {
@@ -20,7 +25,7 @@ export default function Blog({ changeBackground }) {
       }
     };
     getPosts();
-  }, []);
+  }, [dbTriggerPosts]);
 
   return (
     <main className="portfolio">
@@ -29,7 +34,11 @@ export default function Blog({ changeBackground }) {
         <h1>Abstractions</h1>
         {blogPosts.length ? (
           blogPosts.map((post) => (
-            <BlogPost key={post._id} post={post} />
+            <BlogPost
+              key={post._id}
+              post={post}
+              triggerDbPosts={triggerDbPosts}
+            />
           ))
         ) : (
           <article>No posts published. Sorry!</article>
