@@ -27,7 +27,6 @@ export default function BlogPost({ post, triggerDbPosts }) {
       const response = await fetch(`http://localhost:3000/posts/${post._id}`, {
         headers: {
           Authorization: token ? `Bearer ${token}` : null,
-          'Content-Type': 'application/x-www-form-urlencoded',
         },
         method: 'DELETE',
       });
@@ -169,7 +168,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
       {postComments.length ? <h3>Comments</h3> : null}
       {postComments.length
         ? postComments.map((comment) => (
-          <Comment comment={comment} key={comment._id} />
+          <Comment comment={comment} key={comment._id} triggerDb={triggerDb} />
         ))
         : null}
       <h3>New Comment</h3>

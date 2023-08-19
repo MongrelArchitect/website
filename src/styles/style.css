@@ -293,6 +293,7 @@ nav .links {
   font-size: 1.4rem;
   gap: 8px;
   padding: 8px;
+  white-space: pre-wrap;
 }
 
 .project.blog-post .comment-form {
