@@ -24,7 +24,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
     try {
       const response = await fetch(`http://localhost:3000/posts/${post._id}`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: token ? `Bearer ${token}` : null,
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         method: 'DELETE',
@@ -55,13 +55,34 @@ export default function BlogPost({ post, triggerDbPosts }) {
     }
   };
 
-  const toggleEdit = async (event) => {
-    const { target } = event;
-    if (editing) {
-      target.textContent = 'Edit Post';
-    } else {
-      target.textContent = 'Cancel Edit';
+  const submitPostEdit = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/posts/${post._id}`, {
+        body: new URLSearchParams({
+          title: editingTitle,
+          text: editingText,
+        }),
+        headers: {
+          Authorization: token ? `Bearer ${token}` : null,
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        method: 'PATCH',
+      });
+      const result = await response.json();
+      triggerDbPosts();
+      setEditing(!editing);
+      if (result.status !== 200) {
+        // XXX
+        // handle invalid token / delete errors
+      }
+    } catch (err) {
+      // XXX
+      // handle errors better
+      console.error(err);
     }
+  };
+
+  const toggleEdit = async () => {
     setEditingTitle(post.title);
     setEditingText(post.text);
     setEditing(!editing);
@@ -81,7 +102,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
         {token ? (
           <span className="post-control">
             <button className="edit" onClick={toggleEdit} type="button">
-              Edit Post
+              {editing ? 'Cancel Edit' : 'Edit Post'}
             </button>
             <button className="delete" onClick={deletePost} type="button">
               Delete Post
@@ -121,7 +142,13 @@ export default function BlogPost({ post, triggerDbPosts }) {
       )}
       {editing ? (
         <div className="post-control">
-          <button className="submit-edit" type="button">Submit Edit</button>
+          <button
+            className="submit-edit"
+            onClick={submitPostEdit}
+            type="button"
+          >
+            Submit Edit
+          </button>
         </div>
       ) : null}
       <div className="post-info">
