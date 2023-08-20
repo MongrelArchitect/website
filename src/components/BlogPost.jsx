@@ -117,15 +117,6 @@ export default function BlogPost({ post, triggerDbPosts }) {
             </button>
           </span>
         ) : null}
-        {token ? (
-          <span
-            className={
-              post.published ? 'published-info yes' : 'published-info no'
-            }
-          >
-            {post.published ? 'PUBLISHED' : 'NOT PUBLISHED'}
-          </span>
-        ) : null}
         {editing ? (
           <div>
             <label htmlFor={`editingTitle${post._id}`}>
@@ -157,9 +148,17 @@ export default function BlogPost({ post, triggerDbPosts }) {
       ) : (
         <div>{he.decode(post.text)}</div>
       )}
+      {token ? (
+        <span
+          className={
+            editingPublished ? 'published-info yes' : 'published-info no'
+          }
+        >
+          {editingPublished ? 'Published' : 'Not Published'}
+        </span>
+      ) : null}
       {editing ? (
         <div className="post-control bottom">
-          <span>{editingPublished ? 'Published' : 'Not Published'}</span>
           <label className="switch" htmlFor={`published${post._id}`}>
             <input
               checked={editingPublished || false}
