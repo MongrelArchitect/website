@@ -45,7 +45,7 @@ export default function None({ changeBackground }) {
     <main className="portfolio">
       <Nav changeBackground={changeBackground} />
       <article className="quote invalid">
-        <h1>For Sean Only</h1>
+        <h1>Gateway</h1>
         <div className="project blog-post">
           <h3>Login</h3>
           <div className="comment-form">

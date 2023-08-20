@@ -46,7 +46,9 @@ export default function Contact() {
         <div className="image-container">
           <div className="contact-photo" />
         </div>
-        <p className="latin">Tu ne cede malis sed contra audentior ito.</p>
+        <a href="/login" className="latin" tabIndex="-1">
+          Tu ne cede malis sed contra audentior ito.
+        </a>
       </div>
     </article>
   );
