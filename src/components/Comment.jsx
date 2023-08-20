@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import apiUrl from '../util/api';
 
 const he = require('he');
 
@@ -20,7 +21,7 @@ export default function Comment({ comment, triggerDb }) {
   const deleteComment = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/posts/${comment.post}/comments/${comment._id}`,
+        apiUrl.singleComment(comment.post, comment._id),
         {
           headers: {
             Authorization: token ? `Bearer ${token}` : null,
@@ -44,7 +45,7 @@ export default function Comment({ comment, triggerDb }) {
   const submitCommentEdit = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/posts/${comment.post}/comments/${comment._id}`,
+        apiUrl.singleComment(comment.post, comment._id),
         {
           body: new URLSearchParams({
             author: editingAuthor,

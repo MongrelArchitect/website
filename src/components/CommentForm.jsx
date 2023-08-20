@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import apiUrl from '../util/api';
 
 export default function CommentForm({ post, triggerDb }) {
   const [author, setAuthor] = useState('');
@@ -14,7 +15,7 @@ export default function CommentForm({ post, triggerDb }) {
 
   const submitForm = async () => {
     try {
-      await fetch(`http://localhost:3000/posts/${post._id}/comments/`, {
+      await fetch(apiUrl.postComments(post._id), {
         body: new URLSearchParams({
           author,
           text,

@@ -29,7 +29,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
 
   const deletePost = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/posts/${post._id}`, {
+      const response = await fetch(apiUrl.singlePost(post._id), {
         headers: {
           Authorization: token ? `Bearer ${token}` : null,
         },
@@ -63,7 +63,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
 
   const submitPostEdit = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/posts/${post._id}`, {
+      const response = await fetch(apiUrl.singlePost(post._id), {
         body: new URLSearchParams({
           published: editingPublished ? 'true' : '',
           text: editingText,

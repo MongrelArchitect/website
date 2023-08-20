@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Nav from './Nav';
+import apiUrl from '../util/api';
 
 export default function None({ changeBackground }) {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function None({ changeBackground }) {
 
   const submitForm = async () => {
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch(apiUrl.login, {
         body: new URLSearchParams({
           email,
           password,
