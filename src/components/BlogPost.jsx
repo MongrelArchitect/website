@@ -98,6 +98,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
   };
 
   const toggleEdit = async () => {
+    setError('');
     setEditingPublished(post.published);
     setEditingTitle(he.decode(post.title));
     setEditingText(he.decode(post.text));

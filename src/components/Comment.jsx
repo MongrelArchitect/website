@@ -9,12 +9,14 @@ export default function Comment({ comment, triggerDb }) {
   const [editing, setEditing] = useState(false);
   const [editingAuthor, setEditingAuthor] = useState(he.decode(comment.author));
   const [editingText, setEditingText] = useState(he.decode(comment.text));
+  const [error, setError] = useState('');
 
   const changeEditingAuthor = (event) => {
     setEditingAuthor(event.target.value);
   };
 
   const changeEditingText = (event) => {
+    setError('');
     setEditingText(event.target.value);
   };
 
@@ -30,15 +32,15 @@ export default function Comment({ comment, triggerDb }) {
         },
       );
       const result = await response.json();
-      triggerDb();
       if (result.status !== 200) {
-        // XXX
-        // handle invalid token / delete errors
+        console.error(result);
+        setError('Error deleting comment');
+      } else {
+        triggerDb();
       }
     } catch (err) {
-      // XXX
-      // handle errors better
       console.error(err);
+      setError('Error deleting comment');
     }
   };
 
@@ -59,20 +61,23 @@ export default function Comment({ comment, triggerDb }) {
         },
       );
       const result = await response.json();
-      triggerDb();
-      setEditing(!editing);
-      if (result.status !== 200) {
-        // XXX
-        // handle invalid token / delete errors
+      if (!editingText) {
+        setError('Comment required');
+      } else if (result.status !== 200) {
+        console.error(result);
+        setError('Error submitting edit');
+      } else {
+        triggerDb();
+        setEditing(!editing);
       }
     } catch (err) {
-      // XXX
-      // handle errors better
       console.error(err);
+      setError('Error submitting edit');
     }
   };
 
   const toggleEdit = () => {
+    setError('');
     setEditing(!editing);
     setEditingAuthor(he.decode(comment.author));
     setEditingText(he.decode(comment.text));
@@ -137,15 +142,18 @@ export default function Comment({ comment, triggerDb }) {
           ) : null}
         </div>
       </div>
+      {editing && error ? <span className="error">{error}</span> : null}
       {editing ? (
-        <div className="post-control">
-          <button
-            className="submit-edit"
-            onClick={submitCommentEdit}
-            type="button"
-          >
-            Submit Edit
-          </button>
+        <div>
+          <div className="post-control">
+            <button
+              className="submit-edit"
+              onClick={submitCommentEdit}
+              type="button"
+            >
+              Submit Edit
+            </button>
+          </div>
         </div>
       ) : null}
     </div>
