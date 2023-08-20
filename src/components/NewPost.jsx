@@ -43,7 +43,7 @@ export default function NewPost({ triggerDbPosts }) {
       const result = await response.json();
       if (result.status === 400) {
         setError('Title and text both required');
-      } else if (result.status !== 200) {
+      } else if (result.status !== 201) {
         console.error(result);
         setError('Error submitting post');
       } else {

@@ -308,7 +308,7 @@ nav .links {
   padding: 8px;
 }
 
-.project.blog-post .comment-form .error {
+.project .error {
   background: #c40000;
   color: #eee;
   padding: 8px;

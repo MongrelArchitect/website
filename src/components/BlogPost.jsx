@@ -8,18 +8,22 @@ const he = require('he');
 export default function BlogPost({ post, triggerDbPosts }) {
   const token = localStorage.getItem('token');
 
-  const [postComments, setPostComments] = useState([]);
+  const [commentsError, setCommentsError] = useState('');
   const [dbTrigger, setDbTrigger] = useState(false);
   const [editing, setEditing] = useState(false);
   const [editingPublished, setEditingPublished] = useState(post.published);
   const [editingTitle, setEditingTitle] = useState(he.decode(post.title));
   const [editingText, setEditingText] = useState(he.decode(post.text));
+  const [error, setError] = useState('');
+  const [postComments, setPostComments] = useState([]);
 
   const changeEditingText = (event) => {
+    setError('');
     setEditingText(event.target.value);
   };
 
   const changeEditingTitle = (event) => {
+    setError('');
     setEditingTitle(event.target.value);
   };
 
@@ -36,15 +40,15 @@ export default function BlogPost({ post, triggerDbPosts }) {
         method: 'DELETE',
       });
       const result = await response.json();
-      triggerDbPosts();
       if (result.status !== 200) {
-        // XXX
-        // handle invalid token / delete errors
+        console.error(result);
+        setError('Error deleting post');
+      } else {
+        triggerDbPosts();
       }
     } catch (err) {
-      // XXX
-      // handle errors better
       console.error(err);
+      setError('Error deleting post');
     }
   };
 
@@ -54,10 +58,12 @@ export default function BlogPost({ post, triggerDbPosts }) {
       const result = await response.json();
       const { comments } = result;
       if (comments) {
+        setCommentsError('');
         setPostComments(comments);
       }
     } catch (err) {
       console.error(err);
+      setCommentsError('Error retrieving comments');
     }
   };
 
@@ -76,16 +82,18 @@ export default function BlogPost({ post, triggerDbPosts }) {
         method: 'PATCH',
       });
       const result = await response.json();
-      triggerDbPosts();
-      setEditing(!editing);
-      if (result.status !== 200) {
-        // XXX
-        // handle invalid token / delete errors
+      if (!editingTitle || !editingText) {
+        setError('Title and text both required');
+      } else if (result.status !== 200) {
+        console.error(result);
+        setError('Error submitting edit');
+      } else {
+        triggerDbPosts();
+        setEditing(!editing);
       }
     } catch (err) {
-      // XXX
-      // handle errors better
       console.error(err);
+      setError('Error submitting edit');
     }
   };
 
@@ -168,6 +176,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
             />
             <span className="slider" />
           </label>
+          {error ? <span className="error">{error}</span> : null}
           <button
             className="submit-edit"
             onClick={submitPostEdit}
@@ -190,6 +199,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
           ) : null}
         </div>
       </div>
+      {commentsError ? <span className="error">{commentsError}</span> : null}
       {postComments.length ? <h3>Comments</h3> : null}
       {postComments.length
         ? postComments.map((comment) => (
