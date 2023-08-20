@@ -11,6 +11,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
   const [postComments, setPostComments] = useState([]);
   const [dbTrigger, setDbTrigger] = useState(false);
   const [editing, setEditing] = useState(false);
+  const [editingPublished, setEditingPublished] = useState(post.published);
   const [editingTitle, setEditingTitle] = useState(he.decode(post.title));
   const [editingText, setEditingText] = useState(he.decode(post.text));
 
@@ -20,6 +21,10 @@ export default function BlogPost({ post, triggerDbPosts }) {
 
   const changeEditingTitle = (event) => {
     setEditingTitle(event.target.value);
+  };
+
+  const changePublished = () => {
+    setEditingPublished(!editingPublished);
   };
 
   const deletePost = async () => {
@@ -60,8 +65,9 @@ export default function BlogPost({ post, triggerDbPosts }) {
     try {
       const response = await fetch(`http://localhost:3000/posts/${post._id}`, {
         body: new URLSearchParams({
-          title: editingTitle,
+          published: editingPublished ? 'true' : '',
           text: editingText,
+          title: editingTitle,
         }),
         headers: {
           Authorization: token ? `Bearer ${token}` : null,
@@ -84,6 +90,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
   };
 
   const toggleEdit = async () => {
+    setEditingPublished(post.published);
     setEditingTitle(he.decode(post.title));
     setEditingText(he.decode(post.text));
     setEditing(!editing);
@@ -108,6 +115,15 @@ export default function BlogPost({ post, triggerDbPosts }) {
             <button className="delete" onClick={deletePost} type="button">
               Delete Post
             </button>
+          </span>
+        ) : null}
+        {token ? (
+          <span
+            className={
+              post.published ? 'published-info yes' : 'published-info no'
+            }
+          >
+            {post.published ? 'PUBLISHED' : 'NOT PUBLISHED'}
           </span>
         ) : null}
         {editing ? (
@@ -142,7 +158,17 @@ export default function BlogPost({ post, triggerDbPosts }) {
         <div>{he.decode(post.text)}</div>
       )}
       {editing ? (
-        <div className="post-control">
+        <div className="post-control bottom">
+          <span>{editingPublished ? 'Published' : 'Not Published'}</span>
+          <label className="switch" htmlFor={`published${post._id}`}>
+            <input
+              checked={editingPublished || false}
+              id={`published${post._id}`}
+              onChange={changePublished}
+              type="checkbox"
+            />
+            <span className="slider" />
+          </label>
           <button
             className="submit-edit"
             onClick={submitPostEdit}
@@ -168,7 +194,11 @@ export default function BlogPost({ post, triggerDbPosts }) {
       {postComments.length ? <h3>Comments</h3> : null}
       {postComments.length
         ? postComments.map((comment) => (
-          <Comment comment={comment} key={comment._id} triggerDb={triggerDb} />
+          <Comment
+            comment={comment}
+            key={comment._id}
+            triggerDb={triggerDb}
+          />
         ))
         : null}
       <h3>New Comment</h3>

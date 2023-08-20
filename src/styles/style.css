@@ -314,10 +314,31 @@ nav .links {
   gap: 4px;
 }
 
-.project.blog-post .post-header .post-control {
+.project.blog-post .post-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project.blog-post .published-info {
+  padding: 8px;
+}
+
+.project.blog-post .published-info.no {
+  background: #c47e00;
+}
+
+.project.blog-post .published-info.yes {
+  background: #00c400;
+}
+
+.project.blog-post .post-control {
   display: flex;
   gap: 8px;
-  margin-bottom: 16px;
+}
+
+.project.blog-post .post-control.bottom {
+  flex-direction: column;
 }
 
 .project.blog-post .comment-form form button,
@@ -328,9 +349,9 @@ nav .links {
   cursor: pointer;
   font-family: ega, Arial, sans-serif;
   font-size: 1.4rem;
-  max-width: 50%;
   outline: none;
   padding: 8px;
+  width: max-content;
 }
 
 .project.blog-post .post-control button.delete {
@@ -405,6 +426,63 @@ nav .links {
   font-size: 1.5rem;
   font-style: italic;
   margin-left: 2rem;
+}
+
+/* post editing "published" slider */
+.switch {
+  display: inline-block;
+  height: 40px;
+  position: relative;
+  width: 64px;
+}
+
+.switch:hover,
+.switch:focus {
+  outline: 4px solid #111;
+}
+
+.switch input {
+  height: 0;
+  opacity: 0;
+  width: 0;
+}
+
+.slider {
+  background: #c47e00;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+  -webkit-transition: .4s;
+}
+
+.slider:before {
+  background: #eee;
+  bottom: 6px;
+  content: "";
+  height: 28px;
+  left: 5px;
+  position: absolute;
+  transition: .4s;
+  width: 28px;
+  -webkit-transition: .4s;
+}
+
+input:checked + .slider {
+  background: #00c400;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #111;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  -webkit-transform: translateX(26px);
 }
 
 @media (min-width: 650px) {
