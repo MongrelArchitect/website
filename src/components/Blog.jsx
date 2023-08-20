@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BlogPost from './BlogPost';
 import Nav from './Nav';
+import NewPost from './NewPost';
 import apiUrl from '../util/api';
 
 export default function Blog({ changeBackground }) {
@@ -39,6 +40,7 @@ export default function Blog({ changeBackground }) {
       <Nav changeBackground={changeBackground} />
       <div className="info">
         <h1>Abstractions</h1>
+        {token ? <NewPost triggerDbPosts={triggerDbPosts} /> : null}
         {blogPosts.length ? (
           blogPosts.map((post) => (
             <BlogPost
