@@ -4,6 +4,7 @@ import apiUrl from '../util/api';
 export default function NewPost({ triggerDbPosts }) {
   const token = localStorage.getItem('token');
 
+  const [error, setError] = useState('');
   const [published, setPublished] = useState(false);
   const [text, setText] = useState('');
   const [title, setTitle] = useState('');
@@ -14,10 +15,12 @@ export default function NewPost({ triggerDbPosts }) {
 
   const editText = (event) => {
     setText(event.target.value);
+    setError('');
   };
 
   const editTitle = (event) => {
     setTitle(event.target.value);
+    setError('');
   };
 
   const submitForm = async () => {
@@ -38,18 +41,20 @@ export default function NewPost({ triggerDbPosts }) {
         method: 'POST',
       });
       const result = await response.json();
-      setPublished(false);
-      setText('');
-      setTitle('');
-      triggerDbPosts();
-      if (result.status !== 200) {
-        // XXX
-        // handle invalid token / delete errors
+      if (result.status === 400) {
+        setError('Title and text both required');
+      } else if (result.status !== 200) {
+        console.error(result);
+        setError('Error submitting post');
+      } else {
+        setPublished(false);
+        setText('');
+        setTitle('');
+        triggerDbPosts();
       }
     } catch (err) {
-      // XXX
-      // handle errors better
       console.error(err);
+      setError('Error submitting post');
     }
   };
 
@@ -92,6 +97,7 @@ export default function NewPost({ triggerDbPosts }) {
             />
             <span className="slider" />
           </label>
+          {error ? <span className="error">{error}</span> : null}
           <button onClick={submitForm} type="button">
             Submit
           </button>
