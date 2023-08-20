@@ -308,6 +308,12 @@ nav .links {
   padding: 8px;
 }
 
+.project.blog-post .comment-form .error {
+  background: #c40000;
+  color: #eee;
+  padding: 8px;
+}
+
 .project.blog-post .comment-form form,
 .project.blog-post label {
   display: flex;

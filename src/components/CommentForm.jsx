@@ -3,6 +3,7 @@ import apiUrl from '../util/api';
 
 export default function CommentForm({ post, triggerDb }) {
   const [author, setAuthor] = useState('');
+  const [error, setError] = useState('');
   const [text, setText] = useState('');
 
   const editAuthor = (event) => {
@@ -11,11 +12,12 @@ export default function CommentForm({ post, triggerDb }) {
 
   const editText = (event) => {
     setText(event.target.value);
+    setError('');
   };
 
   const submitForm = async () => {
     try {
-      await fetch(apiUrl.postComments(post._id), {
+      const response = await fetch(apiUrl.postComments(post._id), {
         body: new URLSearchParams({
           author,
           text,
@@ -23,13 +25,20 @@ export default function CommentForm({ post, triggerDb }) {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         method: 'POST',
       });
-      triggerDb();
-      setAuthor('');
-      setText('');
+      const result = await response.json();
+      if (result.status === 400) {
+        setError('Comment required');
+      } else if (result.status !== 200) {
+        console.error(result);
+        setError('Error submitting comment');
+      } else {
+        triggerDb();
+        setAuthor('');
+        setText('');
+      }
     } catch (err) {
-      // XXX
-      // handle errors better
       console.error(err);
+      setError('Error submitting comment');
     }
   };
 
@@ -56,6 +65,7 @@ export default function CommentForm({ post, triggerDb }) {
             value={text}
           />
         </label>
+        {error ? <span className="error">{error}</span> : null}
         <button onClick={submitForm} type="button">
           Submit
         </button>
