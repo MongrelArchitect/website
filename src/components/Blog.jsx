@@ -9,6 +9,7 @@ export default function Blog({ changeBackground }) {
 
   const [blogPosts, setBlogPosts] = useState([]);
   const [dbTriggerPosts, setDbTriggerPosts] = useState(false);
+  const [loading, setLoading] = useState('');
 
   const triggerDbPosts = () => {
     setDbTriggerPosts(!dbTriggerPosts);
@@ -17,6 +18,7 @@ export default function Blog({ changeBackground }) {
   useEffect(() => {
     const getPosts = async () => {
       try {
+        setLoading('Loading...');
         const fetchOptions = {};
         // send valid token to include unpublished posts
         if (token) {
@@ -26,10 +28,14 @@ export default function Blog({ changeBackground }) {
         const result = await response.json();
         const { posts } = result;
         if (posts) {
+          setLoading('');
           setBlogPosts(posts);
+        } else {
+          setLoading('No posts found.');
         }
       } catch (err) {
         console.error(err);
+        setLoading('Error loading posts');
       }
     };
     getPosts();
@@ -50,7 +56,13 @@ export default function Blog({ changeBackground }) {
             />
           ))
         ) : (
-          <article>No posts published. Sorry!</article>
+          <article>
+            {loading ? (
+              <span>
+                {loading}
+              </span>
+            ) : null}
+          </article>
         )}
       </div>
     </main>
