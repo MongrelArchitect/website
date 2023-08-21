@@ -1,4 +1,4 @@
-const DOMAIN = 'https://blog-api-7d3w19orx7.fly.dev/';
+const DOMAIN = 'https://blog-api-7d3w19orx7.fly.dev';
 
 const apiUrl = {
   allPosts: `${DOMAIN}/posts`,
