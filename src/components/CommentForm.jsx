@@ -28,7 +28,7 @@ export default function CommentForm({ post, triggerDb }) {
       const result = await response.json();
       if (result.status === 400) {
         setError('Comment required');
-      } else if (result.status !== 200) {
+      } else if (result.status !== 201) {
         console.error(result);
         setError('Error submitting comment');
       } else {
