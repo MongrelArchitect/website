@@ -3,7 +3,7 @@ import findemImage from '../images/findem.jpg';
 import gememoryImage from '../images/gememory.jpg';
 import fineartImage from '../images/fineart.jpg';
 import membersOnlyImage from '../images/membersonly.jpg';
-import inventoryImage from '../images/invertebratorium.jpg';
+import blogApiImage from '../images/blog-api.jpg';
 
 const myProjects = [
   {
@@ -14,6 +14,14 @@ const myProjects = [
     image: chedditImage,
     liveDemo: 'https://cheddit.net',
     name: 'Cheddit',
+  },
+  {
+    description:
+      'An API for blog management, jamstack style. Runs the blog on this site!',
+    github: 'https://github.com/MongrelArchitect/blog-api',
+    image: blogApiImage,
+    liveDemo: 'https://seanericthomas.com/blog',
+    name: 'Blog API',
   },
   {
     description:
@@ -30,15 +38,6 @@ const myProjects = [
     image: findemImage,
     liveDemo: 'https://waldo-c3546.web.app/',
     name: "Find 'Em",
-  },
-  {
-    description:
-      'An inventory management application for an imaginary store,'
-      + ' using Node.js + Express with MongoDB.',
-    github: 'https://github.com/MongrelArchitect/inventory-app',
-    image: inventoryImage,
-    liveDemo: 'https://withered-sky-7506.fly.dev/',
-    name: 'Inventory',
   },
   {
     description:
