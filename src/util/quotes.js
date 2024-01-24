@@ -1,19 +1,28 @@
 const quotes = [
   {
+    text: 'There is no magic. There is only knowledge, more or less hidden.',
+    author: 'Gene Wolfe',
+  },
+  {
+    text:
+    "We've gotten used to the simple fact: all we hold dear is hanging by a thread, and every haven that we fabricate can only be an intermittent space.",
+    author: 'Robin Staps',
+  },
+  {
     text:
       'Those who are capable of tyranny are capable of perjury to'
       + ' sustain it.',
     author: 'Lysander Spooner',
   },
   {
-    text: 'How can anyone read history and still trust politicians?',
-    author: 'Thomas Sowell',
-  },
-  {
     text:
       'The only thing that makes life possible is permanent,'
       + ' intolerable uncertainty.',
     author: 'Ursula Le Guin',
+  },
+  {
+    text: 'How can anyone read history and still trust politicians?',
+    author: 'Thomas Sowell',
   },
   {
     text: 'There can be no truly moral choice unless that choice '
@@ -23,10 +32,6 @@ const quotes = [
   {
     text: 'He who is unfit to serve his fellow citizens wants to rule them.',
     author: 'Ludwig von Mises',
-  },
-  {
-    text: 'There is no magic. There is only knowledge, more or less hidden.',
-    author: 'Gene Wolfe',
   },
   {
     text: 'Poverty can be brought about by law; it cannot be forbidden by law.',
