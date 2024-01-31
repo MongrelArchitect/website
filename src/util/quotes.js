@@ -4,8 +4,7 @@ const quotes = [
     author: 'Gene Wolfe',
   },
   {
-    text:
-    "We've gotten used to the simple fact: all we hold dear is hanging by a thread, and every haven that we fabricate can only be an intermittent space.",
+    text: 'All we hold dear is hanging by a thread, and every haven that we fabricate can only be an intermittent space.',
     author: 'Robin Staps',
   },
   {
@@ -25,8 +24,9 @@ const quotes = [
     author: 'Thomas Sowell',
   },
   {
-    text: 'There can be no truly moral choice unless that choice '
-          + ' is made in freedom.',
+    text:
+      'There can be no truly moral choice unless that choice '
+      + ' is made in freedom.',
     author: 'Murray Rothbard',
   },
   {
@@ -38,23 +38,27 @@ const quotes = [
     author: 'Isabel Paterson',
   },
   {
-    text: 'Part of freedom is the right of each of us to go to hell'
-          + ' in his own fashion.',
+    text:
+      'Part of freedom is the right of each of us to go to hell'
+      + ' in his own fashion.',
     author: 'David D. Friedman',
   },
   {
-    text: 'Government is the great fiction through which everybody '
-          + ' endeavors to live at the expense of everybody else.',
+    text:
+      'Government is the great fiction through which everybody '
+      + ' endeavors to live at the expense of everybody else.',
     author: 'Frédéric Bastiat',
   },
   {
-    text: 'Living is fighting for life, and when anyone does not know'
-          + ' this fact, someone else is doing his fighting for him.',
+    text:
+      'Living is fighting for life, and when anyone does not know'
+      + ' this fact, someone else is doing his fighting for him.',
     author: 'Rose Wilder Lane',
   },
   {
-    text: 'Just as war is the natural consequence of monopoly, peace'
-          + ' is the natural consequence of liberty.',
+    text:
+      'Just as war is the natural consequence of monopoly, peace'
+      + ' is the natural consequence of liberty.',
     author: 'Gustave de Molinari',
   },
 ];
