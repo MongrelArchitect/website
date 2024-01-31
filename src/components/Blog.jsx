@@ -18,7 +18,7 @@ export default function Blog({ changeBackground }) {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        setLoading('Loading...');
+        setLoading('Loading..');
         const fetchOptions = {};
         // send valid token to include unpublished posts
         if (token) {
@@ -60,6 +60,9 @@ export default function Blog({ changeBackground }) {
             {loading ? (
               <span>
                 {loading}
+                {loading === 'Loading..' ? (
+                  <span className="blink">.</span>
+                ) : null}
               </span>
             ) : null}
           </article>

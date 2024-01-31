@@ -118,6 +118,16 @@ nav .links {
   overflow: auto;
 }
 
+.blink {
+  animation: blinker 750ms step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 .portfolio {
   max-height: 100vh;
   overflow-wrap: break-word;
