@@ -1,11 +1,19 @@
 import chedditImage from '../images/cheddit.jpg';
 import findemImage from '../images/findem.jpg';
-import gememoryImage from '../images/gememory.jpg';
 import fineartImage from '../images/fineart.jpg';
 import membersOnlyImage from '../images/membersonly.jpg';
 import blogApiImage from '../images/blog-api.jpg';
+import zovantImage from '../images/zovant.jpg';
 
 const myProjects = [
+  {
+    description:
+      'A gallery site for a local artist to upload and display her work.',
+    github: 'https://github.com/MongrelArchitect/lauren-new',
+    image: fineartImage,
+    liveDemo: 'http://lauren-art.web.app/',
+    name: 'Art Gallery',
+  },
   {
     description:
       'An imageboard site where users can create and moderate their own'
@@ -17,7 +25,15 @@ const myProjects = [
   },
   {
     description:
-      'An API for blog management, jamstack style. Runs the blog on this site!',
+      'An inventory management site for a CCTV wholesaler, with custom CMS features.',
+    github: 'https://github.com/MongrelArchitect/zovant',
+    image: zovantImage,
+    liveDemo: 'https://zovantcctv.com/',
+    name: 'Zovant',
+  },
+  {
+    description:
+      'An API for blog management. Runs the blog on this site!',
     github: 'https://github.com/MongrelArchitect/blog-api',
     image: blogApiImage,
     liveDemo: 'https://seanericthomas.com/blog',
@@ -38,23 +54,6 @@ const myProjects = [
     image: findemImage,
     liveDemo: 'https://waldo-c3546.web.app/',
     name: "Find 'Em",
-  },
-  {
-    description:
-      'A memory game where players try to keep track of a shifting grid'
-      + ' of gemstones.',
-    github: 'https://github.com/MongrelArchitect/memory-card',
-    image: gememoryImage,
-    liveDemo: 'https://mongrelarchitect.github.io/memory-card/',
-    name: 'GEMemory',
-  },
-  {
-    description:
-      'A custom gallery site for a local artist to display her work.',
-    github: 'https://github.com/MongrelArchitect/lauren',
-    image: fineartImage,
-    liveDemo: 'http://mendelsohnbassfineart.com/',
-    name: 'Art Gallery',
   },
 ];
 
