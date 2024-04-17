@@ -2,22 +2,39 @@ import chedditImage from '../images/cheddit.jpg';
 import findemImage from '../images/findem.jpg';
 import fineartImage from '../images/fineart.jpg';
 import membersOnlyImage from '../images/membersonly.jpg';
+import parerntingoBackendImage from '../images/parentingo-backend.jpg';
+import parerntingoImage from '../images/parentingo.jpg';
 import blogApiImage from '../images/blog-api.jpg';
 import zovantImage from '../images/zovant.jpg';
 
 const myProjects = [
   {
     description:
+      'A place for parents to make their own discussion groups. Decoupled frontend made with React and TypeScript.',
+    github: 'https://github.com/MongrelArchitect/parentingo-frontend',
+    image: parerntingoImage,
+    liveDemo: 'https://parentingo.com',
+    name: 'Parentingo',
+  },
+  {
+    description:
+      'The backend for Parentingo. A RESTful API using Node.JS and MongoDB, made with TypeScript and tested with Jest + SuperTest.',
+    github: 'https://github.com/MongrelArchitect/parentingo-backend',
+    image: parerntingoBackendImage,
+    liveDemo: 'https://parentingo.com',
+    name: 'Parentingo API',
+  },
+  {
+    description:
       'A gallery site for a local artist to upload and display her work.',
     github: 'https://github.com/MongrelArchitect/lauren-new',
     image: fineartImage,
-    liveDemo: 'http://lauren-art.web.app/',
+    liveDemo: 'https://lauren-art.web.app/',
     name: 'Art Gallery',
   },
   {
     description:
-      'An imageboard site where users can create and moderate their own'
-      + ' discussion boards.',
+      'An imageboard site where users can create and moderate their own boards.',
     github: 'https://github.com/MongrelArchitect/cheddit',
     image: chedditImage,
     liveDemo: 'https://cheddit.net',
@@ -32,8 +49,7 @@ const myProjects = [
     name: 'Zovant',
   },
   {
-    description:
-      'An API for blog management. Runs the blog on this site!',
+    description: 'An API for blog management. Runs the blog on this site!',
     github: 'https://github.com/MongrelArchitect/blog-api',
     image: blogApiImage,
     liveDemo: 'https://seanericthomas.com/blog',
