@@ -1,6 +1,7 @@
 import React from 'react';
 import githubIcon from '../images/github.png';
 import linkedIn from '../images/linkedin.png';
+import resume from '../assets/sean-eric-thomas_resume-01.pdf';
 
 export default function Contact() {
   return (
@@ -39,6 +40,11 @@ export default function Contact() {
             <p className="details">
               <a href="mailto:set@seanericthomas.com" title="email">
                 set@seanericthomas.com
+              </a>
+            </p>
+            <p className="details">
+              <a href={resume} title="resume">
+                resume
               </a>
             </p>
           </div>
