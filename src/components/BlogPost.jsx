@@ -168,7 +168,7 @@ export default function BlogPost({ post, triggerDbPosts }) {
       ) : null}
       {editing ? (
         <div className="post-control bottom">
-          <label className="switch" htmlFor={`published${post._id}`}>
+          <label aria-label="published" className="switch" htmlFor={`published${post._id}`}>
             <input
               checked={editingPublished || false}
               id={`published${post._id}`}

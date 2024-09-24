@@ -88,7 +88,7 @@ export default function NewPost({ triggerDbPosts }) {
           >
             {published ? 'Published' : 'Not Published'}
           </span>
-          <label className="switch" htmlFor="published">
+          <label aria-label="published" className="switch" htmlFor="published">
             <input
               checked={published || false}
               id="published"

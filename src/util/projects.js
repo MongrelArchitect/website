@@ -1,13 +1,20 @@
 import chedditImage from '../images/cheddit.jpg';
-import findemImage from '../images/findem.jpg';
 import fineartImage from '../images/fineart.jpg';
 import membersOnlyImage from '../images/membersonly.jpg';
+import ourFamilyHubImage from '../images/our-family-hub.jpg';
 import parerntingoBackendImage from '../images/parentingo-backend.jpg';
 import parerntingoImage from '../images/parentingo.jpg';
 import blogApiImage from '../images/blog-api.jpg';
 import zovantImage from '../images/zovant.jpg';
 
 const myProjects = [
+  {
+    description: 'Create private families to plan events, share todo lists and more! Made with Next.js and PostgreSQL, containerized with Docker.',
+    github: 'https://github.com/MongrelArchitect/our-family-hub',
+    image: ourFamilyHubImage,
+    liveDemo: 'https://ourfamilyhub.net',
+    name: 'Our Family Hub',
+  },
   {
     description:
       'A place for parents to make their own discussion groups. Decoupled frontend made with React and TypeScript.',
@@ -63,13 +70,6 @@ const myProjects = [
     image: membersOnlyImage,
     liveDemo: 'https://shy-night-2038.fly.dev/',
     name: 'Members Only',
-  },
-  {
-    description: 'A Where\'s Waldo style "find the character" game.',
-    github: 'https://github.com/MongrelArchitect/waldo',
-    image: findemImage,
-    liveDemo: 'https://waldo-c3546.web.app/',
-    name: "Find 'Em",
   },
 ];
 
