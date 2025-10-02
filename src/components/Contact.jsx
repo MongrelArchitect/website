@@ -1,7 +1,4 @@
 import React from 'react';
-import githubIcon from '../images/github.png';
-import linkedIn from '../images/linkedin.png';
-import resume from '../assets/sean-eric-thomas_resume-01.pdf';
 
 export default function Contact() {
   return (
@@ -11,40 +8,14 @@ export default function Contact() {
         <div className="contact-info">
           <p>Let&apos;s work together and make good times for all!</p>
           <div className="contact-details">
-            <p className="details icons">
-              <a href="https://github.com/MongrelArchitect" title="Github">
-                <img
-                  alt="GitHub"
-                  className="link-icon"
-                  src={githubIcon}
-                  title="GitHub"
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/sean-eric-thomas/"
-                title="LinkedIn"
-              >
-                <img
-                  alt="LinkedIn"
-                  className="link-icon"
-                  src={linkedIn}
-                  title="LinkedIn"
-                />
-              </a>
-            </p>
             <p className="details">
-              <a href="tel:+18053161187" title="phone">
-                805-316-1187
+              <a href="tel:+18054190390" title="phone">
+                805-419-0390
               </a>
             </p>
             <p className="details">
               <a href="mailto:set@seanericthomas.com" title="email">
                 set@seanericthomas.com
-              </a>
-            </p>
-            <p className="details">
-              <a href={resume} title="resume">
-                resume
               </a>
             </p>
           </div>

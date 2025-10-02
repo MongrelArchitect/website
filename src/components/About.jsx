@@ -12,7 +12,7 @@ export default function About() {
         <div className="about-large">
           <h2>About Me</h2>
           <p>
-            I&apos;m a web developer from southern California. I enjoy playing
+            I&apos;m a nursing student from southern California. I enjoy playing
             guitar, roguelikes, science fiction and hiking with my kids.
           </p>
         </div>
